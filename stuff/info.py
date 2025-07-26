@@ -16,5 +16,12 @@ def hookinfo(hookurl):
         hookinf = info.json()
         av = {hookinf['avatar']}
         hookpfp = f"https://cdn.discordapp.com/avatars/{hookinf['id']}/{av}" if av else 'None'
-        
-        return f"[!] Webhook Name: {hookinf['name']}\n[!] Webhook ID: {hookinf['id']}\n[!] Webhook Creation Date: {date(hookinf['id'])}\n[!] Webhook PFP: {hookpfp if not 'None' in hookpfp else 'None'}\n[!] Channel ID: {hookinf['channel_id']}\n[!] Server ID: {hookinf['guild_id']}\n[!] Webhook Type: {hookinf['type']}\n[!] Webhook Token: {hookinf['token']}"
+        if hookinf['type'] == 1:
+            webhooktype = "Normal"
+        elif hookinf['type'] == 2:
+            webhooktype = "Follower"
+        elif hookinf['type'] == 3:
+            webhooktype = "Bot"
+        else:
+            webhooktype = "unknown"
+        return f"[!] Webhook Name: {hookinf['name']}\n[!] Webhook ID: {hookinf['id']}\n[!] Webhook Creation Date: {date(hookinf['id'])}\n[!] Webhook PFP: {hookpfp if not 'None' in hookpfp else 'None'}\n[!] Channel ID: {hookinf['channel_id']}\n[!] Server ID: {hookinf['guild_id']}\n[!] Webhook Type: {webhooktype}\n[!] Webhook Token: {hookinf['token']}"

@@ -1,4 +1,3 @@
-#test
 import requests
 import time
 import json
@@ -13,7 +12,6 @@ import colorama
 from colorama import Fore, Style
 
 colorama.init(autoreset=True)
-PACKBLUD = 'diddy'
 
 headers = {
     "Content-Type": "application/json"
@@ -24,7 +22,7 @@ g = '''
               _                 _             
              | |               | |                    
  __  ____   _| |__   ___   ___ | | _____ _ __ 
- \ \/ /\ \ / / '_ \ / _ \ / _ \| |/ / _ \ '__|        V1.5
+ \ \/ /\ \ / / '_ \ / _ \ / _ \| |/ / _ \ '__|        V1.6
   >  <  \ V /| | | | (_) | (_) |   <  __/ |   
  /_/\_\  \_/ |_| |_|\___/ \___/|_|\_\___|_|   
                                               

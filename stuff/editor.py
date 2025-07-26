@@ -38,3 +38,11 @@ def edithookpfpalt(hookurl, img):
         print('[+] Changed Webhook PFP')
     else:
         print('[-] Failed To Change Webhook PFP')
+        
+def edithookmsg(hookurl, msg, id):
+    payload = {'content': msg}
+    gng = requests.patch(f'{hookurl}/messages/{id}', json=payload, headers=headers)
+    if gng.status_code == 200:
+        print('[+] Edited Message')
+    else:
+        print('[-] Failed To Edit Message')

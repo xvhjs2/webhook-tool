@@ -8,3 +8,4 @@ functions:
 - webhook msg sender
 - webhook editor
 - webhook deleter
+- message editor

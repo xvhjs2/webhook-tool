@@ -13,7 +13,7 @@ import colorama
 from colorama import Fore, Style
 
 colorama.init(autoreset=True)
-
+PACKBLUD = 'diddy'
 
 headers = {
     "Content-Type": "application/json"

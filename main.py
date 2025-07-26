@@ -23,7 +23,7 @@ g = '''
               _                 _             
              | |               | |                    
  __  ____   _| |__   ___   ___ | | _____ _ __ 
- \ \/ /\ \ / / '_ \ / _ \ / _ \| |/ / _ \ '__|        V1.1
+ \ \/ /\ \ / / '_ \ / _ \ / _ \| |/ / _ \ '__|        V1.5
   >  <  \ V /| | | | (_) | (_) |   <  __/ |   
  /_/\_\  \_/ |_| |_|\___/ \___/|_|\_\___|_|   
                                               
@@ -38,7 +38,7 @@ def enterwebhook():
         print(Fore.WHITE + options)
         option = input('[!] Enter An Option: ')
         if option == "1":
-            stuff.info.hookinfo(hookurl)
+            print(stuff.info.hookinfo(hookurl))
             input("[!] Press Enter")
             cls()
             uiwopt()
@@ -100,6 +100,14 @@ def enterwebhook():
             uiwopt()
             
         elif option == "6":
+            id = input('[!] Enter Message ID: ')
+            msg = input('[!] Enter Message: ')
+            edithookmsg(hookurl, msg, id)
+            input('[!] Press Enter')
+            cls()
+            uiwopt()
+
+        elif option == "7":
             enterwebhook()
             
         else:
@@ -111,11 +119,16 @@ def enterwebhook():
         v = requests.get(hookurl, headers=headers)
         if v.status_code == 200:
             print('[+] Valid Webhook')
+            with open("stuff/history/history.txt", 'a') as f:
+                f.write('[+] Webhook URL:' + ' ' + hookurl + '\n' + stuff.info.hookinfo(hookurl) + '\n')
             time.sleep(1.5)
             cls()
             uiwopt()
         else:
             print('[-] Invalid Webhook')
+            with open("stuff/history/history.txt", 'a') as f:
+                f.write('[+] Webhook URL:' + ' ' + hookurl + '\n' + '[-] Invalid Webhook' + '\n')
+
             time.sleep(1)
             enterwebhook()
     validate(hookurl)
@@ -134,7 +147,8 @@ options = '''
     [3] Spam Messages
     [4] Edit Webhook
     [5] Delete Webhook
-    [6] Change Webhook
+    [6] Edit Webhook Message
+    [7] Change Webhook
 '''
 
 def tool():

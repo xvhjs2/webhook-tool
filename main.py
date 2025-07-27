@@ -118,6 +118,13 @@ def enterwebhook():
             uiwopt()
 
         elif option == "7":
+            id = input('[!] Enter Message ID: ')
+            deletehookmsg(hookurl, id)
+            input('[!] Press Enter')
+            cls()
+            uiwopt()
+
+        elif option == "8":
             enterwebhook()
             
         else:
@@ -158,7 +165,8 @@ options = '''
     [4] Edit Webhook
     [5] Delete Webhook
     [6] Edit Webhook Message
-    [7] Change Webhook
+    [7] Delete Webhook Message
+    [8] Change Webhook
 '''
 
 def tool():

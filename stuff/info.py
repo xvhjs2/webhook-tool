@@ -14,7 +14,7 @@ def hookinfo(hookurl):
     info = requests.get(hookurl, headers=headers)
     if info.status_code == 200:
         hookinf = info.json()
-        av = {hookinf['avatar']}
+        av = hookinf['avatar']
         hookpfp = f"https://cdn.discordapp.com/avatars/{hookinf['id']}/" + av if av else 'None'
         if hookinf['type'] == 1:
             webhooktype = "Normal"

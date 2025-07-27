@@ -25,3 +25,5 @@ def hookinfo(hookurl):
         else:
             webhooktype = "unknown"
         return f"[!] Webhook Name: {hookinf['name']}\n[!] Webhook ID: {hookinf['id']}\n[!] Webhook Creation Date: {date(hookinf['id'])}\n[!] Webhook PFP: {hookpfp if not 'None' in hookpfp else 'None'}\n[!] Channel ID: {hookinf['channel_id']}\n[!] Server ID: {hookinf['guild_id']}\n[!] Webhook Type: {webhooktype}\n[!] Webhook Token: {hookinf['token']}"
+    else:
+        print('[-] Invalid Webhook Or Failed To Fetch Info')

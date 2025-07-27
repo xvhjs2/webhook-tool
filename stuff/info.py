@@ -15,7 +15,7 @@ def hookinfo(hookurl):
     if info.status_code == 200:
         hookinf = info.json()
         av = {hookinf['avatar']}
-        hookpfp = f"https://cdn.discordapp.com/avatars/{hookinf['id']}/{av}" if av else 'None'
+        hookpfp = f"https://cdn.discordapp.com/avatars/{hookinf['id']}/" + av if av else 'None'
         if hookinf['type'] == 1:
             webhooktype = "Normal"
         elif hookinf['type'] == 2:

@@ -12,7 +12,7 @@ def deletehook(hookurl):
 
 def deletehookmsg(hookurl, id):
     gng = requests.delete(f'{hookurl}/messages/{id}', headers=headers)
-    if gng.status_code == 200:
+    if gng.status_code in [200, 201, 204]:
         print('[+] Deleted Message')
     else:
         print('[-] Failed To Delete Message')

@@ -9,3 +9,10 @@ def deletehook(hookurl):
         print('[+] Successfully Deleted Webhook')
     else:
         print(f'[-] Failed To Delete Webhook: {drk.status_code}')
+
+def deletehookmsg(hookurl, id):
+    gng = requests.delete(f'{hookurl}/messages/{id}', headers=headers)
+    if gng.status_code == 200:
+        print('[+] Deleted Message')
+    else:
+        print('[-] Failed To Delete Message')

@@ -22,7 +22,7 @@ g = '''
               _                 _             
              | |               | |                    
  __  ____   _| |__   ___   ___ | | _____ _ __ 
- \ \/ /\ \ / / '_ \ / _ \ / _ \| |/ / _ \ '__|        V1.6
+ \ \/ /\ \ / / '_ \ / _ \ / _ \| |/ / _ \ '__|        V1.67
   >  <  \ V /| | | | (_) | (_) |   <  __/ |   
  /_/\_\  \_/ |_| |_|\___/ \___/|_|\_\___|_|   
                                               
@@ -51,8 +51,19 @@ def enterwebhook():
             
         elif option == "3":
             message = input('[!] Enter Message: ')
-            amount =  int(input('[!] Enter Message Amount: '))
-            cooldown = int(input('[!] Enter Cooldown: '))
+            while True:
+                try:
+                    amount = int(input('[!] Enter Message Amount: '))
+                    break
+                except ValueError:
+                    print("[-] you either didn't enter a number or you accidentally inputted smth that isn't a number. try again")
+            while True:
+                try:
+                    cooldown = int(input('[!] Enter Cooldown: '))
+                    break
+                except ValueError:
+                    print("[-] you either didn't enter a number or you accidentally inputted smth that isn't a number. try again")
+                
             spammsg(hookurl, message, amount, cooldown)
             input('[!] Press Enter')
             cls()
@@ -126,7 +137,7 @@ def enterwebhook():
         else:
             print('[-] Invalid Webhook')
             with open("stuff/history/history.txt", 'a') as f:
-                f.write('[+] Webhook URL:' + ' ' + hookurl + '\n' + '[-] Invalid Webhook' + '\n')
+                f.write('[+] Webhook URL:' + ' ' + hookurl + '\n' + '[-] Invalid Webhook' + '\n' + '\n')
 
             time.sleep(1)
             enterwebhook()

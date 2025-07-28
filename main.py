@@ -144,14 +144,14 @@ def enterwebhook():
         v = requests.get(hookurl, headers=headers)
         if v.status_code == 200:
             print('[+] Valid Webhook')
-            with open("stuff/history/history.txt", 'a') as f:
+            with open("stuff/history/history.txt", 'a', encoding='utf-8') as f:
                 f.write('[+] Webhook URL:' + ' ' + hookurl + '\n' + stuff.info.hookinfo(hookurl) + '\n' + '\n')
             time.sleep(1.5)
             cls()
             uiwopt()
         else:
             print('[-] Invalid Webhook')
-            with open("stuff/history/history.txt", 'a') as f:
+            with open("stuff/history/history.txt", 'a', encoding='utf-8') as f:
                 f.write('[+] Webhook URL:' + ' ' + hookurl + '\n' + '[-] Invalid Webhook' + '\n' + '\n')
 
             time.sleep(1)

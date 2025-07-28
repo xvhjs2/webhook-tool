@@ -138,7 +138,7 @@ def enterwebhook():
         if v.status_code == 200:
             print('[+] Valid Webhook')
             with open("stuff/history/history.txt", 'a') as f:
-                f.write('[+] Webhook URL:' + ' ' + hookurl + '\n' + stuff.info.hookinfo(hookurl) + '\n')
+                f.write('[+] Webhook URL:' + ' ' + hookurl + '\n' + stuff.info.hookinfo(hookurl) + '\n' + '\n')
             time.sleep(1.5)
             cls()
             uiwopt()

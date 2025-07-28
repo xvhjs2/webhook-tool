@@ -22,11 +22,11 @@ g = '''
               _                 _             
              | |               | |                    
  __  ____   _| |__   ___   ___ | | _____ _ __ 
- \ \/ /\ \ / / '_ \ / _ \ / _ \| |/ / _ \ '__|        V1.76 :vomit:
+ \ \/ /\ \ / / '_ \ / _ \ / _ \| |/ / _ \ '__|        V1.76 🤮🤮🤮
   >  <  \ V /| | | | (_) | (_) |   <  __/ |   
  /_/\_\  \_/ |_| |_|\___/ \___/|_|\_\___|_|        created by https://github.com/xvhjs2
 
-                                              WAIT FOR TUFF NIGGA MOMENT 
+                                              WAIT FOR TUFF NIGGA MOMENT 💀💀💀💀
 
 '''
 print(Fore.BLUE + g)

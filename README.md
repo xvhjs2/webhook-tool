@@ -9,3 +9,5 @@ functions:
 - webhook editor
 - webhook deleter
 - message editor
+- webhook message deleter
+- ghost message

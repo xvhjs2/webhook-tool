@@ -22,7 +22,7 @@ g = '''
               _                 _             
              | |               | |                    
  __  ____   _| |__   ___   ___ | | _____ _ __ 
- \ \/ /\ \ / / '_ \ / _ \ / _ \| |/ / _ \ '__|        V1.67
+ \ \/ /\ \ / / '_ \ / _ \ / _ \| |/ / _ \ '__|        V1.76 :vomit:
   >  <  \ V /| | | | (_) | (_) |   <  __/ |   
  /_/\_\  \_/ |_| |_|\___/ \___/|_|\_\___|_|        created by https://github.com/xvhjs2
 
@@ -124,8 +124,15 @@ def enterwebhook():
             input('[!] Press Enter')
             cls()
             uiwopt()
-
+            
         elif option == "8":
+            msg = input('[!] Enter Message: ')
+            ghostmsg(hookurl, msg)
+            input('[!] Press Enter')
+            cls()
+            uiwopt()
+
+        elif option == "9":
             enterwebhook()
             
         else:
@@ -167,7 +174,8 @@ options = '''
     [5] Delete Webhook
     [6] Edit Webhook Message
     [7] Delete Webhook Message
-    [8] Change Webhook
+    [8] Ghost Message
+    [9] Change Webhook
 '''
 
 def tool():

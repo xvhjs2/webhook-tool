@@ -11,3 +11,5 @@ functions:
 - message editor
 - webhook message deleter
 - ghost message
+
+bro the fucking niche invisible ping method is now patched because of scammers utilizing it

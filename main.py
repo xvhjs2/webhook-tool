@@ -60,7 +60,7 @@ def enterwebhook():
                     print("[-] you either didn't enter a number or you accidentally inputted smth that isn't a number. try again")
             while True:
                 try:
-                    cooldown = int(input('[!] Enter Cooldown: '))
+                    cooldown = float(input('[!] Enter Cooldown: '))
                     break
                 except ValueError:
                     print("[-] you either didn't enter a number or you accidentally inputted smth that isn't a number. try again")

@@ -12,7 +12,7 @@ def sendmsg(hookurl, message):
     else:
         print(f'[-] Failed To Send Message: {msg.status_code}')
         
-def spammsg(hookurl, message, amount, cooldown):
+def spammsg(hookurl, message, amount, cooldown: float):
     for _ in range(amount):
         sendmsg(hookurl, message)
         time.sleep(cooldown)
